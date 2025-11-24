@@ -5,12 +5,14 @@ This `TODO_README.md` is the single-source-of-truth for next steps, experiments,
 > Note: Removed classification aspects (OVR/OVO, classifiers) as the problem is regression-based for predicting exam scores.
 
 ## Quick Contract
+
 - **Inputs**: CSV datasets in `data/` (e.g., `caffeine_intake.csv`, `sleep_efficiency.csv`, etc.).
 - **Output**: Trained regression models, evaluation metrics, experiment logs, plots, and an interactive inference frontend.
 - **Success Criteria**: Reproducible pipeline for exam score prediction, ablation studies, and a user-friendly frontend for personalized recommendations.
 - **Error Modes**: Missing data, invalid inputs in frontend, model overfitting to synthetic data.
 
 ## What's Already Done (from `main.ipynb`)
+
 - [x] Load and explore datasets (caffeine, coffee health, sleep efficiency, student habits).
 - [x] Generate synthetic data: caffeine intake, sleep quality, stress proxy, focus proxy, expand to 10k rows.
 - [x] Visualizations: scatter plots, heatmaps, histograms, pairplots, boxplots, barplots.
@@ -21,6 +23,7 @@ This `TODO_README.md` is the single-source-of-truth for next steps, experiments,
 - [x] Basic predictions (e.g., study hours from exam scores).
 
 ## What Needs to Be Done (Checklist)
+
 - [ ] **Build Configurable Regression Pipeline**: Implement scikit-learn Pipeline with preprocessing (scalers: Standard/MinMax/Robust; encoders: OneHot/Ordinal; imputation) + regressor (RandomForest, GradientBoosting, etc.). Test on small data subset.
 - [ ] **Ablation Study Design**: Define experiments to measure impact of scalers, encoders, models, and feature selections. Baseline: StandardScaler + OneHot + RandomForest. Ablations: no scaler, different encoders, model swaps.
 - [ ] **Experiment Automation and Logging**: Create `run_experiment.py` script to run ablation experiments, log metrics (MSE, R², training time), save models/artifacts to `artifacts/` and `experiments/` folders.
@@ -34,6 +37,7 @@ This `TODO_README.md` is the single-source-of-truth for next steps, experiments,
   - **UI Details**: Responsive design, real-time updates, save/load profiles, tooltips explaining features, and export recommendations as PDF or image.
 
 ## Pipeline Components (Recommended)
+
 1. **Data Ingestion**: Robust CSV loader with schema checks.
 2. **Train/Validation Split**: Use train_test_split or cross-validation.
 3. **Preprocessing**:
@@ -44,6 +48,7 @@ This `TODO_README.md` is the single-source-of-truth for next steps, experiments,
 5. **Feature Selection**: Optional (e.g., SelectKBest).
 
 ## Ablation Study Design
+
 - **Baseline**: StandardScaler + OneHot + RandomForestRegressor.
 - **Ablations**:
   - Scalers: None vs Standard vs MinMax vs Robust.
@@ -53,21 +58,25 @@ This `TODO_README.md` is the single-source-of-truth for next steps, experiments,
 - Evaluate on same CV folds, log MSE, R², time.
 
 ## Evaluation Metrics
+
 - Primary: MSE, R².
 - Secondary: MAE, training/inference time.
 - Plots: Actual vs Predicted, residual plots.
 
 ## Logging & Artifacts
+
 - Save models (joblib) to `artifacts/`.
 - Metrics to `experiments/` as JSON/CSV.
 - Frontend: Deploy locally or via Streamlit Cloud.
 
 ## Reproducibility
+
 - `requirements.txt`: pandas==2.0.0, scikit-learn==1.3.0, matplotlib, seaborn, streamlit (for frontend).
 - Seeds: np.random.seed(42), etc.
 - Scripts: `run_experiment.py`, `evaluate.py`.
 
 ## Notebooks & Scripts
+
 - `main.ipynb`: Exploration and pipeline demo.
 - `test.ipynb`: Unit tests for pipeline.
 - `run_experiment.py`: Run ablations.
@@ -75,10 +84,12 @@ This `TODO_README.md` is the single-source-of-truth for next steps, experiments,
 - Frontend: `app.py` (Streamlit) or `frontend/` folder.
 
 ## Quick "Try It" (Developer Notes)
+
 - Test pipeline: Run minimal pipeline in `main.ipynb` on small data.
 - Frontend prototype: Start with Streamlit app for drink selector and basic prediction.
 
 ## Next Steps (Prioritized)
+
 1. Implement regression pipeline in `main.ipynb`.
 2. Build ablation runner script.
 3. Add reproducibility files.
