@@ -1,0 +1,11 @@
+ABLATION STUDY SUMMARY STATISTICS
+============================================================
+
+Total experiments: 1
+Best R²: 0.8123
+Best MSE: 53.99
+Best experiment: model_linear
+
+Top 10 Results:
+  experiment   scaler encoder  model       mse       r2      mae     rmse  training_time  inference_time
+model_linear standard  onehot linear 53.989306 0.812291 5.926054 7.347742       0.015854        0.003463

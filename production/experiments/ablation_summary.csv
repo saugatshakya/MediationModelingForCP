@@ -1,0 +1,2 @@
+experiment,scaler,encoder,model,mse,r2,mae,rmse,training_time,inference_time
+model_linear,standard,onehot,linear,53.989306125456125,0.8122907296162725,5.926054163661851,7.347741566322004,0.0158538818359375,0.0034630298614501953

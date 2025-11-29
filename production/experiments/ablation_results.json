@@ -1,0 +1,21 @@
+[
+  {
+    "experiment_name": "model_linear",
+    "config": {
+      "name": "model_linear",
+      "scaler_type": "standard",
+      "encoder_type": "onehot",
+      "model_type": "linear",
+      "model_kwargs": {}
+    },
+    "metrics": {
+      "mse": 53.989306125456125,
+      "r2": 0.8122907296162725,
+      "mae": 5.926054163661851,
+      "rmse": 7.347741566322004
+    },
+    "training_time": 0.0158538818359375,
+    "inference_time": 0.0034630298614501953,
+    "feature_importance": null
+  }
+]
